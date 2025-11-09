@@ -1,0 +1,23 @@
+# Core Python & Data
+numpy
+pandas
+matplotlib
+seaborn
+
+# Machine Learning / AI
+scikit-learn
+torch
+transformers
+openai
+langchain
+
+# Notebooks & Utilities
+jupyter
+ipykernel
+tqdm
+nbformat
+nbstripout
+
+# Optional: API and cloud connectors
+requests
+google-generativeai
