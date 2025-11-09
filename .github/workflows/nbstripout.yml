@@ -1,0 +1,45 @@
+name: Enforce clean notebooks (nbstripout)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  nbstripout-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install nbstripout
+        run: |
+          python -m pip install --upgrade pip
+          pip install nbstripout
+
+      # Strip outputs in-place for the working tree (CI only)
+      - name: Strip notebook outputs (no commit)
+        run: |
+          nbstripout --version
+          # Force-strip all .ipynb in the repo (recursively)
+          nbstripout --force --drop-empty-cells --keep-count --recursive .
+
+      # If stripping changed anything, fail the job and show which files were dirty
+      - name: Fail if notebooks were not clean
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Notebook outputs (cells/metadata) were present. Please clean locally and recommit."
+            echo "Files needing cleanup:"
+            git --no-pager diff --name-only
+            echo ""
+            echo "Fix locally with:"
+            echo "  pip install nbstripout"
+            echo "  nbstripout --install   # sets a clean filter for future commits"
+            echo "  nbstripout --force --drop-empty-cells --keep-count --recursive ."
+            exit 1
+          fi
