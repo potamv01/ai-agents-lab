@@ -1,5 +1,9 @@
 # ai-agents-lab
-Agentic AI models, tools, orchestration, memory , evaluation agents move beyond LLM prototypes to become production-ready systems.
+<img width="245" height="254" alt="image" src="https://github.com/user-attachments/assets/9495e367-15bc-4a68-8617-a5ffbd5343c0" />
+
+
+Agentic AI systems: encompassing models, tools, orchestration, memory, and evaluation—evolve beyond LLM prototypes to become robust, production-ready solutions.
+
 # AI Agents Intensive (with Google)
 
 > **5-Day Kaggle × Google Intensive Course**  
