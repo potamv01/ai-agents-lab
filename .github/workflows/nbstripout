@@ -1,0 +1,26 @@
+name: Enforce clean notebooks (nbstripout)
+
+on:
+  pull_request:
+    paths:
+      - '**/*.ipynb'   # only run when notebooks change
+
+jobs:
+  nbstripout-check:
+    runs-on: ubuntu-latest
+    permissions: { contents: read }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: |
+          python -m pip install --upgrade pip
+          pip install nbstripout
+          nbstripout --force --drop-empty-cells --keep-count --recursive .
+          # if changes found, just summarize instead of failing
+          if ! git diff --quiet; then
+            echo "### Notebook cleanup suggested" >> $GITHUB_STEP_SUMMARY
+            git --no-pager diff --name-only >> $GITHUB_STEP_SUMMARY
+          fi
+    # Don't fail the job (prevents email/red X)
+    continue-on-error: true
