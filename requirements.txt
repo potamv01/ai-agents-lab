@@ -18,6 +18,11 @@ tqdm
 nbformat
 nbstripout
 
-# Optional: API and cloud connectors
+# FYI: API and cloud connectors
 requests
 google-generativeai
+
+# LLM
+plotly
+gradio
+streamlit
