@@ -10,6 +10,13 @@ Agentic AI systems: encompassing models, tools, orchestration, memory, and evalu
 > Exploring how modern AI agents leverage LLMs, tools, and APIs to solve real-world problems.
 
 ---
+<!-- Core badges -->
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python version">
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white" alt="Jupyter Notebook">
+  <img src="https://img.shields.io/badge/Kaggle-Course-20BEFF?logo=kaggle&logoColor=white" alt="Kaggle Course">
+  <img src="https://img.shields.io/badge/Google-AI%20Agents-4285F4?logo=google&logoColor=white" alt="Google AI Agents">
+  <img src="https://img.shields.io/badge/License-MIT-green?logo=open-source-initiative&logoColor=white" alt="License: MIT">
+---
 
 ## 📚 Overview
 This repository documents my participation in the **AI Agents Intensive Course with Google**, a 5-day interactive program hosted on **Kaggle** and supported by **Google AI**, **NVIDIA**, and **Cohere**.
