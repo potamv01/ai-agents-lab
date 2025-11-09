@@ -62,5 +62,15 @@ Link your Kaggle account to Discord → [confirmation link](https://kaggle.com/d
 
 ---
 
-## 🧩 Repository Structure
+🤝 **Want to join?**  
+Fork this repository and start your own version of the project!  
+Then submit improvements via **Pull Requests** or share ideas in the **Discussions** tab.
+
+---
+[![Join Me](https://img.shields.io/badge/Join%20the%20Project-0e75b6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/potamv01/ai-agents-lab/fork)
+
+----
+
+## 🧩 Repository Structure 
+TBC
 
