@@ -1,28 +1,11 @@
-# Core Python & Data
-numpy
-pandas
-matplotlib
-seaborn
+steps:
+- uses: actions/checkout@v5
+- name: Set up Python
+  uses: actions/setup-python@v5
+  with:
+    python-version: '3.x'
+- name: Install dependencies
+  run: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
 
-# Machine Learning / AI
-scikit-learn
-torch
-transformers
-openai
-langchain
-
-# Notebooks & Utilities
-jupyter
-ipykernel
-tqdm
-nbformat
-nbstripout
-
-# FYI: API and cloud connectors
-requests
-google-generativeai
-
-# LLM
-plotly
-gradio
-streamlit
