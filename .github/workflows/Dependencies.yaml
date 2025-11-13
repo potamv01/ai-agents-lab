@@ -1,0 +1,2 @@
+- name: List installed dependencies
+  run: pip freeze
