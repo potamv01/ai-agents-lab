@@ -1,15 +1,38 @@
 name: Setup Python
-uses: actions/setup-python@v6
+uses: actions/setup-python@v6.0.0
 with:
-  python-version: "3.11"
-  cache: "pip"
-  cache-dependency-path: |
-    requirements.txt
-    requirements/*.txt
-  architecture: "x64"
-  check-latest: false
-  update-environment: true
-  allow-prereleases: false
-  freethreaded: false
-  pip-version: "24"
+  # Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset.
+  python-version: '3.9'  # Example: using Python version 3.9
+
+  # File containing the Python version to use. Example: .python-version
+  python-version-file: '.python-version'  # Optional, if you have a .python-version file
+
+  # Used to specify a package manager for caching in the default directory. Supported values: pip, pipenv, poetry.
+  cache: 'pip'  # Example: using pip for package management
+
+  # The target architecture (x86, x64, arm64) of the Python or PyPy interpreter.
+  architecture: 'x64'  # Example: 64-bit architecture
+
+  # Set this option if you want the action to check for the latest available version that satisfies the version spec.
+  check-latest: true  # Example: checking for the latest version
+
+  # The token used to authenticate when fetching Python distributions from https://github.com/actions/python-versions. 
+  token: ''  # Optional, typically not needed on GitHub.com
+
+  # Used to specify the path to dependency files. Supports wildcards or a list of file names for caching multiple dependencies.
+  cache-dependency-path: '**/requirements.txt'  # Caching dependencies from requirements.txt files
+
+  # Set this option if you want the action to update environment variables.
+  update-environment: true  # Default is true, updates environment variables for the selected Python version
+
+  # When 'true', a version range passed to 'python-version' input will match prerelease versions if no GA versions are found. 
+  # Only 'x.y' version range is supported for CPython.
+  allow-prereleases: false  # Set to true if you want to allow pre-release versions
+
+  # When 'true', use the freethreaded version of Python.
+  freethreaded: false  # Set to true if you want the freethreaded version
+
+  # Used to specify the version of pip to install with the Python. Supported format: major[.minor][.patch].
+  pip-version: '21.2'  # Example: installing pip version 21.2
+
 
