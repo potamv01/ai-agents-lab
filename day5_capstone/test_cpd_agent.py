@@ -1,7 +1,34 @@
 # day5_capstone/test_cpd_agent.py
 
+"""Integration-style checks for the CPD agent runner.
+
+This module is written to be run manually, but pytest will collect it by
+default. We skip the tests entirely when the Google ADK dependency is not
+available so CI environments without that package do not fail during
+collection.
+"""
+
 import asyncio
+import importlib.util
 from pprint import pprint
+
+import pytest
+
+
+# The official Google ADK package is not available in the execution
+# environment used for automated testing. Skip the module early to avoid import
+# errors during pytest collection.
+try:  # pragma: no cover - import guard
+    has_google_adk = importlib.util.find_spec("google.adk") is not None
+except ModuleNotFoundError:
+    has_google_adk = False
+
+if not has_google_adk:
+    pytest.skip(
+        "google-adk is not installed; skip CPD agent integration checks.",
+        allow_module_level=True,
+    )
+
 
 from runner_setup import runner  # uses the file we just created
 
