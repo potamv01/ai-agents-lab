@@ -74,3 +74,13 @@ Then submit improvements via **Pull Requests** or share ideas in the **Discussio
 ## 🧩 Repository Structure 
 TBC
 
+
+
+## 🌐 GitHub-hosted redirect
+This repository now includes a GitHub Pages deployment that redirects visitors to the live app:
+
+- Live app target: `https://telugu-newsroom-ai-684820903498.us-west1.run.app/`
+- Redirect page source: `docs/index.html`
+- Deployment workflow: `.github/workflows/deploy-pages.yml`
+
+To publish it, set **Settings → Pages → Source = GitHub Actions** in your repo.
